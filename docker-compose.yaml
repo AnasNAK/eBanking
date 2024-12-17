@@ -9,7 +9,7 @@ services:
           POSTGRES_PASSWORD: ${DB_AUTH_PASSWORD}
           POSTGRES_DB: ${DEFAULT_DB_NAME}
     ports:
-      - '53752:5432'
+      - '5432:5432'
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: unless-stopped
@@ -22,7 +22,6 @@ services:
           SPRING_DATASOURCE_URL: ${APP_DATASOURCE_URL}
           SPRING_DATASOURCE_USERNAME: ${DB_AUTH_USERNAME}
           SPRING_DATASOURCE_PASSWORD: ${DB_AUTH_PASSWORD}
-          SPRING_JPA_HIBERNATE_DDL_AUTO: create-drop
 
     ports:
       - '8080:8080'
